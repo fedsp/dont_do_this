@@ -53,6 +53,26 @@ function ref_table_helper(country) {
 }
 
 
+for (let i = 0; i< result.length; i++){
+    /* IF THE VALUE IS ZERO ON THOSE OCASIONS, IT IS TRANSFORMED TO ZERO */
+    if (result[i]['columnA']===null){
+      result[i]['columnA'] = '0'
+    }
+    if (result[i]['columnB']===null){
+      result[i]['columnB'] = '0'
+    }
+    if (result[i]['columnC']===null){
+      result[i]['columnC'] = '0'
+    }
+    if (result[i]['columnD']===null){
+      result[i]['columnD'] = '0'
+    }
+    if (result[i]['columnE']===null){
+      result[i]['columnE'] = '0'
+    }
+}
+
+
 const verifyUser = function (username, password, callback) {
     dataBase.verifyUser(username, password, (error, userInfo) => {
         if (error) {
@@ -74,22 +94,3 @@ const verifyUser = function (username, password, callback) {
         }
     })
 };
-
-
-for (let i = 0; i< result.length; i++){
-    /* IF THE VALUE IS ZERO ON THOSE OCASIONS, IT IS TRANSFORMED TO ZERO */
-    if (result[i]['columnA']===null){
-      result[i]['columnA'] = '0'
-    }
-    if (result[i]['columnB']===null){
-      result[i]['columnB'] = '0'
-    }
-    if (result[i]['columnC']===null){
-      result[i]['columnC'] = '0'
-    }
-    if (result[i]['columnD']===null){
-      result[i]['columnD'] = '0'
-    }
-    if (result[i]['columnE']===null){
-      result[i]['columnE'] = '0'
-}
