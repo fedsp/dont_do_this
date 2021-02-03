@@ -53,8 +53,10 @@ function ref_table_helper(country) {
 }
 
 
+
+
 for (let i = 0; i< result.length; i++){
-    /* IF THE VALUE IS ZERO ON THOSE OCASIONS, IT IS TRANSFORMED TO ZERO */
+    /* IF THE VALUE IS NULL ON THOSE OCASIONS, IT IS TRANSFORMED TO ZERO */
     if (result[i]['columnA']===null){
       result[i]['columnA'] = '0'
     }
@@ -71,6 +73,23 @@ for (let i = 0; i< result.length; i++){
       result[i]['columnE'] = '0'
     }
 }
+
+
+
+
+
+
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'mysql.examplehostname.com',
+  user     : 'admin',
+  password : 'a1b2c4@2021',
+  database : 'db1'
+});
+connection.connect();
+
+
+
 
 
 const verifyUser = function (username, password, callback) {
